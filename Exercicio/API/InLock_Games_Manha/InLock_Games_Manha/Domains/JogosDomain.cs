@@ -13,5 +13,6 @@ namespace InLock_Games_Manha.Domains
         public string Descricao { get; set; }
         public string DataLancamento { get; set; }
         public double valor { get; set; }
+        public EstudiosDomain estudios { get; set; }
     }
 }
