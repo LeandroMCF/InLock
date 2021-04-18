@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace InLock_Games_Manha.Domains
 {
-    public class TipoUsuarios
+    public class EstudiosDomain
     {
-        public int IdTipoUsuarios { get; set; }
-        public string Titulo { get; set; }
+        public int IdEstudios { get; set; }
+        public string NomeEstudios { get; set; }
     }
 }
