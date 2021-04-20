@@ -36,7 +36,7 @@ namespace InLock_Games_Manha.Repositories
                             },
 
                             NomeJogos = rdr[1].ToString(),
-                            valor = Convert.ToDouble(rdr[2]),
+                            valor = Convert.ToDecimal(rdr[2]),
                             DataLancamento = rdr[3].ToString()
                         };
 
@@ -52,8 +52,7 @@ namespace InLock_Games_Manha.Repositories
         {
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                string cadastrar = "INSERT INTO Jogos (IdEstudios, NomeJogos, Descricao, DataLancamento, Valor)" +
-                    "VALUES (" + novoJogo.IdEstudios + ", '" + novoJogo.NomeJogos + "', '" + novoJogo.Descricao + "', '" + novoJogo.DataLancamento + "', " + novoJogo.valor + ")";
+                string cadastrar = "INSERT INTO Jogos (IdEstudios, NomeJogos, Descricao, DataLancamento, Valor) VALUES (" + novoJogo.IdEstudios + ", '" + novoJogo.NomeJogos + "', '" + novoJogo.Descricao + "', '" + novoJogo.DataLancamento + "', " + novoJogo.valor + ")";
 
                 con.Open();
 
@@ -102,11 +101,11 @@ namespace InLock_Games_Manha.Repositories
                             estudios = new EstudiosDomain()
                             {
                                 NomeEstudios = rdr[4].ToString(),
+                                IdEstudios = Convert.ToInt32(rdr[0]),
                             },
 
-                            IdEstudios = rdr[0].ToString(),
                             NomeJogos = rdr[1].ToString(),
-                            valor = Convert.ToInt32(rdr[2]),
+                            valor = Convert.ToDecimal(rdr[2]),
                             DataLancamento = rdr[3].ToString(),
 
                         };

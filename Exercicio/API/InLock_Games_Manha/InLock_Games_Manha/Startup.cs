@@ -58,11 +58,13 @@ namespace InLock_Games_Manha
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseRouting();
+
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("//swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "InLock-Games");
                 c.RoutePrefix = string.Empty;
             });
 
@@ -71,7 +73,6 @@ namespace InLock_Games_Manha
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
 
             app.UseAuthentication();
 

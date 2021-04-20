@@ -11,5 +11,7 @@ namespace InLock_Games_Manha.Interfaces
         List<EstudiosDomain> Listar();
 
         void Cadastrar(EstudiosDomain novoEstudio);
+
+        void Deletar(int id);
     }
 }
